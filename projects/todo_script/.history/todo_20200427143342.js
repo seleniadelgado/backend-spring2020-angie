@@ -35,21 +35,16 @@ if (process.argv[2] === undefined || process.argv[2] === "list") {
     listNotes();
 
 } else if (process.argv[2] === "delete") {
-    if (process.argv[3] <= 0) {
-        console.log("Hey, use positive numbers!");
-        return;
-    }
-    if (process.argv[3] == null) {
-        console.log("Hey, type a note number!");
-        return;
-    }
-    if (process.argv[3] == parseFloat(process.argv[3])){
-        console.log("Hey, don't use decimals!");
-        return;
-    }
-    if (process.argv[3] !== isNaN(process.argv[3])) {
+    if (process.argv[3] != isNaN(process.argv[3])) {
         console.log("Hey, use digits!");
-        return;
+    }
+    else if (process.argv[3] <= 0) {
+        console.log("Hey, use positives");
+    }
+
+    else if (process.argv[3] == null) {
+        console.log("Hey, which note?");
+
     }
     else {
     data.notes.splice(process.argv[3] - 1, 1);
@@ -57,7 +52,6 @@ if (process.argv[2] === undefined || process.argv[2] === "list") {
     console.log("Note Deleted succesfully. = .(");
     listNotes();
     }
-
 } else if (process.argv[2] === "done") {
     data.notes[process.argv[3] -1].comepleted_status = true;
     fs.writeFileSync(filename, JSON.stringify(data), "utf8");
@@ -79,3 +73,4 @@ function listNotes() {
         console.log(`Note ${i + 1}: ${data.notes[i].note}`);
     }
 }
+

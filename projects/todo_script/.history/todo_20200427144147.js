@@ -79,3 +79,4 @@ function listNotes() {
         console.log(`Note ${i + 1}: ${data.notes[i].note}`);
     }
 }
+

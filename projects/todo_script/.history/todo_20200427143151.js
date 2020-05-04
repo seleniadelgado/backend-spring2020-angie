@@ -35,20 +35,15 @@ if (process.argv[2] === undefined || process.argv[2] === "list") {
     listNotes();
 
 } else if (process.argv[2] === "delete") {
-    if (process.argv[3] <= 0) {
-        console.log("Hey, use positive numbers!");
-        return;
-    }
-    if (process.argv[3] == null) {
-        console.log("Hey, type a note number!");
-        return;
-    }
-    if (process.argv[3] == parseFloat(process.argv[3])){
-        console.log("Hey, don't use decimals!");
-        return;
-    }
-    if (process.argv[3] !== isNaN(process.argv[3])) {
+    if (process.argv[3] != isNaN(process.argv[3])) {
         console.log("Hey, use digits!");
+    }
+    else if (process.argv[3] <= 0) {
+        console.log("Hey, use positives");
+        return;
+    }
+    else if (process.argv[3] == null) {
+        console.log("Hey, which note?");
         return;
     }
     else {
@@ -79,3 +74,4 @@ function listNotes() {
         console.log(`Note ${i + 1}: ${data.notes[i].note}`);
     }
 }
+

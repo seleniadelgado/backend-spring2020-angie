@@ -1,6 +1,6 @@
 const fs = require('fs');
 const filename = "note.json";
-let data = {
+const data = {
     "notes":[],
     "status":[],
     "date":[]
@@ -79,3 +79,4 @@ function listNotes() {
         console.log(`Note ${i + 1}: ${data.notes[i].note}`);
     }
 }
+

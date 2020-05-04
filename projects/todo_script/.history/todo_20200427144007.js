@@ -40,16 +40,15 @@ if (process.argv[2] === undefined || process.argv[2] === "list") {
         return;
     }
     if (process.argv[3] == null) {
-        console.log("Hey, type a note number!");
-        return;
-    }
-    if (process.argv[3] == parseFloat(process.argv[3])){
-        console.log("Hey, don't use decimals!");
-        return;
+        console.log("Hey, type a note number");
     }
     if (process.argv[3] !== isNaN(process.argv[3])) {
         console.log("Hey, use digits!");
         return;
+    }
+    
+    if (process.argv[3] == parseFloat(process.argv[3])){
+        console.log("Hey, use numerical digits, ex. '1', to easily specify which note to delete. Thank you!");
     }
     else {
     data.notes.splice(process.argv[3] - 1, 1);
@@ -79,3 +78,4 @@ function listNotes() {
         console.log(`Note ${i + 1}: ${data.notes[i].note}`);
     }
 }
+

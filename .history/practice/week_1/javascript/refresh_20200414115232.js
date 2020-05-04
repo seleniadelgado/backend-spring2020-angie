@@ -36,13 +36,3 @@ const myFirstConst = 10;
 
 const myConstObject = {};
 myConstObject.firstArgument = "something";
-
-//comparitors, comparison symbols. 
-//== vs = 
-//= is for assignment. 
-// -- compares both sides and create a boolean. If the same value, it becomes true, 
-// if is not the same value it becomes false. 
-//19 == 30
-// === same value and same data type. compares both sides for value and data type.
-100 == '100';
-

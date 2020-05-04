@@ -16,7 +16,7 @@ if (fs.existsSync(filename)){
 if (process.argv[2] === undefined || process.argv[2] === "list") {
     listNotes();
 
-} else if (process.argv[2]=== "new") {
+} else if (process.argv[2] === "new") {
     let newNote = {
         note: process.argv[3],
         completed_status: false
@@ -79,3 +79,4 @@ function listNotes() {
         console.log(`Note ${i + 1}: ${data.notes[i].note}`);
     }
 }
+
