@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Buzzy Bee - To Do List</title>
+        <meta name="description" content="The HTML5 Herald">
+        <meta name="author" content="SitePoint">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato&display=swap" rel="stylesheet"> 
+        <script
+            src="https://code.jquery.com/jquery-3.5.0.min.js"
+            integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+            crossorigin="anonymous">
+        </script>
+</head>
+<body>
+    <main>
+    <div class="sectionTitle">
+        <div class="appTitle">
+            <h2>Buzzy Bee <br> To Do List</h2>
+        </div>
+        <div id="addNote">
+            <input type="text" id="newNote" placeholder="Add new todo..">
+            <button id="addBtn" type="button">+</button>
+        </div>
+    </div>
+    <div class="todoList">
+        <ul id="myList"></ul>
+    </div>
+    <div class="buttonsArea">
+        <button id="delBtn" type="button">Delete Note</button>
+        <button id="comBtn" type="button">Complete Note</button>
+        <button id="updBtn" type="button">Update Note</button>
+    </div>
+
+</main>
+    <script>
+        $(document).ready(() => {
+            let objectToSend = {
+                note: "Do somethings",
+                author: "Nick"
+            }
+
+//add a new note by pushing the add button.
+            $("#addBtn").click(() => {
+                let value = $('input').val();
+                let newNote = {
+                    note: value,
+                    author: "Angie"
+                }
+                $.post("http://localhost:3000/newNote", newNote, (dataToGet) => {
+                    $("#myList").append(`<li><label class="container"><input type="checkbox"><span class="checkmark">${value}</span></label></li>`
+                    );
+                });
+            });
+
+//,{"note":"hello","author":"Angie","completed_status":false,"create_date":1589603676366}
+//Read the notes
+        $.post("http://localhost:3000/readNotes", {}, (dataToGet) => {
+            let allNotesArray = dataToGet.notes;
+            for (let i = 0; i < allNotesArray.length; i++) {
+                console.log(allNotesArray[i].note);
+                let note = allNotesArray[i].note;
+                let author = allNotesArray[i].author;
+                let date = allNotesArray[i].create_date;
+                $("#myList").append(`<li><label class="container"><input type="checkbox"><span class="checkmark" data-date='${date}' data-author='${author}'>${note}</span></label></li>`
+                    );
+            }
+        });
+//delete a note by pushing the add button.
+            $('#delBtn').click(() => {
+                let checkedNotes = $('input:checked');
+                if (checkedNotes.length > 0 && confirm("Are you sure you want to delete the note(s)?")) {
+                    $.post("http://localhost:3000/deleteNote", )
+                }
+                });
+
+//mark as completed and strikethrough.
+            $('#comBtn').click(() => {
+                console.log("Completed clicked");
+                });
+
+//update a note.
+            $('#updBtn').click(() => {
+                console.log("Updated clicked");
+                });
+            });
+
+        //import the data from default user
+        // make JSON into JS with parse.
+        //with the list we want to populate our ul.
+        //use jquery to access the dom, grab the string
+        //loop over notes
+        //add the note as an li to the ul
+        //  Create li with jquery.
+        //  target the ul with jquery and append the li.
+        //note: $('<li></li>'')
+        //      $('ul') -> a jquery list which holds the ul.
+        //      get 1st element from the array
+
+    </script>
+</body>
+</html>

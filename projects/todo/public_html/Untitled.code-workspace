@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../todo_script"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../practice"
+		}
+	],
+    "settings": {
+        "workbench.colorCustomizations": {
+            "activityBar.background": "#0A3335",
+            "titleBar.activeBackground": "#0E474A",
+            "titleBar.activeForeground": "#F2FCFC"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+html {
+    background-color: whitesmoke;
+}
+
+.sectionTitle {
+    background-color: aqua;
+    text-align: center;
+}
+.sectionTitle .appTitle {
+    color: red;
+}

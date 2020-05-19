@@ -1,0 +1,54 @@
+html {
+    background: linear-gradient(#74ebd5, #ACB6E5);
+    height: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px 100px 75px 100px;
+}
+
+.sectionTitle {
+    background-color: rgb(208, 107, 96);
+    text-align: center;
+    border-bottom: 2px solid darkgray;
+    margin-top: 0%;
+}
+
+.appTitle > h2{
+    margin-top: 10px;
+    color: white;
+}
+#addNote {
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+    height: 30px;
+    width: 50%;
+    margin-bottom: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.addBtn {
+    margin-left: 0%;
+    font-size: 24px;
+    color:  #5680e9;
+    border: none;
+}
+#newNote {
+    border: none;
+    width: 100%;
+    height: 150%;
+    font-size: 24px;
+}
+#myList {
+    list-style: none;
+    padding: 0px;
+    margin-top: 0px;
+}
+#myList li {
+    height: 25px;
+    border-bottom: 1px solid darkgray;
+    background-color: whitesmoke;
+    padding-left: 5px;
+}

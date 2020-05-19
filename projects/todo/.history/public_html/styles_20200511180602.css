@@ -1,0 +1,15 @@
+html {
+    background-color: whitesmoke;
+}
+
+.sectionTitle {
+    background-color: aqua;
+    text-align: center;
+}
+
+.appTitle {
+    color: red;
+}
+#addNote {
+    border: none;   
+}

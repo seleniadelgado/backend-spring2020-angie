@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Buzzy Bee - To Do List</title>
+        <meta name="description" content="The HTML5 Herald">
+        <meta name="author" content="SitePoint">
+        <link rel="stylesheet" href="styles.css">
+        <script
+            src="https://code.jquery.com/jquery-3.5.0.min.js"
+            integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+            crossorigin="anonymous">
+        </script>
+</head>
+<body>
+    <div class="sectionTitle">
+        <div class="appTitle">
+            <h2>Buzzy Bee - To Do List</h2>
+        </div>
+        <div id="addNote">
+            <input type="text" id="newNote" placeholder="Add new todo..">
+            <button class="addBtn">+</button>
+        </div>
+    </div>
+
+    <ul id="myList">
+        <li>give cat a bath</li>
+        <li>clean car</li>
+        <li>get manicure</li>
+        <li>pick up groceries</li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="http://localhost:3000/">Home</a>
+
+
+
+    <script>
+        $(document).ready(() => {
+            let objectToSend = {
+                note: "Do something",
+                author: "Nick"
+            }
+
+            $.post("http://localhost:3000/newNote", objectToSend, (dataToGet) => {
+                console.log(dataToGet);
+            });
+            $.post("http://localhost:3000/readNotes", {}, (dataToGet) => {
+                let allNotesArray = dataToGet.notes;
+
+                console.log(allNotesArray);
+            })
+        })
+    </script>
+</body>
+</html>

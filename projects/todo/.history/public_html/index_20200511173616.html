@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Buzzy Bee - To Do List</title>
+        <meta name="description" content="The HTML5 Herald">
+        <meta name="author" content="SitePoint">
+        <style></style>
+    <script
+    src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+    crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <div class="section-title">
+        <h2>Buzzy Bee To Do List</h2>
+        <input type="text" id="newNote" placeholder="Add new todo..">
+        <span onclick="newNote()" class="addBtn">Add Symbol</span>
+    </div>
+    <ul>
+        <li></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="http://localhost:3000/">Home</a>
+
+
+
+    <script>
+        $(document).ready(() => {d
+            let objectToSend = {
+                note: "Do something",
+                author: "Nick"
+            }
+
+            $.post("http://localhost:3000/newNote", objectToSend, (dataToGet) => {
+                console.log(dataToGet);
+            });
+            $.post("http://localhost:3000/readNotes", {}, (dataToGet) => {
+                let allNotesArray = dataToGet.notes;
+
+                console.log(allNotesArray);
+            })
+        })
+    </script>
+</body>
+</html>

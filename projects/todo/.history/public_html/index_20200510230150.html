@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Todo "app"</title>
+        <meta name="description" content="The HTML5 Herald">
+        <meta name="author" content="SitePoint">
+        <style></style>
+    <script
+    src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+    crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <a href="http://localhost:3000/">Home</a>
+    <script>
+        $(document).ready(() => {
+            let objectToSend = {
+                note: "Do something",
+                author: "Nick"
+            }
+
+            $.post("http://localhost:3000/newNote", objectToSend, (dataToGet) => {
+                console.log(dataToGet);
+            });
+            $.post("http://localhost:3000/readNotes", {}, (dataToGet) => {
+                let allNotesArray = dataToGet.notes;
+
+                console.log(allNotesArray);
+            })
+        })
+    </script>
+</body>
+</html>

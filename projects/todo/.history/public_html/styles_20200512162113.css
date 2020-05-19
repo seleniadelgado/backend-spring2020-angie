@@ -1,0 +1,31 @@
+html {
+    background: linear-gradient(#74ebd5, #ACB6E5);
+    height: 100%;
+    
+}
+body {
+    margin: 0px 100px 75px 100px;
+}
+
+.sectionTitle {
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.appTitle {
+    color: darkgray;
+}
+#addNote #newNote {
+    border: none;
+    margin: auto;
+}
+#myList {
+    list-style: none;
+    padding: 0;
+    
+}
+#myList li {
+    height: 25px;
+    border-bottom: 1px solid darkgray;
+    background-color: whitesmoke;
+}

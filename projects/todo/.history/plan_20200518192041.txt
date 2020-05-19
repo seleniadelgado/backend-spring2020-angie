@@ -1,0 +1,13 @@
+I am using CSS variables for the colors and fonts:
+For the main color of the app's body, I am using a gradient:
+--main-color: linear-gradient(#FF416C, #FF4B2B);
+For the background of the app, I will use this color:
+--background-color: whitesmoke;
+I like it because it's a little off white, not just plain boring white.
+I chose these fonts because I feel like they look like the title of accomplishing something.
+--title-font: 'Abril Fatface', cursive, sans-serif;
+This one went well with the title. I chose a combination that worked well together.
+--list-font: 'Lato', sans-serif;
+I tried different sizes but decided in the end this is the best one for my project.
+--font-size-title: 20px;
+--font-size-list-item: 18px;

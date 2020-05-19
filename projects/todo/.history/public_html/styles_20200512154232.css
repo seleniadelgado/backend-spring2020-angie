@@ -1,0 +1,16 @@
+html {
+    background: linear-gradient(#FC5C7D, #6A82FB);
+    height: 100%;
+}
+
+.sectionTitle {
+    background-color: aqua;
+    text-align: center;
+}
+
+.appTitle {
+    color: red;
+}
+#addNote #newNote {
+    border: none;
+}

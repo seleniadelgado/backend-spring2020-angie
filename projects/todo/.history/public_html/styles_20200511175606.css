@@ -1,0 +1,10 @@
+html {
+    background-color: whitesmoke;
+}
+
+.sectionTitle {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
