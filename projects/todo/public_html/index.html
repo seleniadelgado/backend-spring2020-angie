@@ -59,10 +59,8 @@
                     readNotes();
                     // );
                 });
-            });
-
-//,{"note":"hello","author":"Angie","completed_status":false,"create_date":1589603676366}
-//Read the notes
+            })
+            
         const readNotes = function () {
             $.post("http://localhost:3000/readNotes", {}, (dataToGet) => {
             let allNotesArray = dataToGet.notes;
@@ -90,13 +88,6 @@
                 //update a note.
                 var btn = $(`span[data-id='${author + date}']`).next();
                 btn.click(() => {
-                    console.log("edit clicked");
-                    console.log(note);
-                    //add event listener to idbtn.
-                    //on click, turn li into a text box to update.
-                    //send this updated note to the back
-                    //update by reading all notes on the front.
-               
                 var updatedNote = prompt("Please enter updated todo:", note);
                 upNote = {
                     create_date: date,
@@ -159,19 +150,6 @@
 
 
             });
-
-        //import the data from default user
-        // make JSON into JS with parse.
-        //with the list we want to populate our ul.
-        //use jquery to access the dom, grab the string
-        //loop over notes
-        //add the note as an li to the ul
-        //  Create li with jquery.
-        //  target the ul with jquery and append the li.
-        //note: $('<li></li>'')
-        //      $('ul') -> a jquery list which holds the ul.
-        //      get 1st element from the array
-
     </script>
 </body>
 </html>
